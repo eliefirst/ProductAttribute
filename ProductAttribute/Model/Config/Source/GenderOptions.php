@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Elie\ProductAttribute\Model\Config\Source;
+namespace ElielWeb\ProductAttribute\Model\Config\Source;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
