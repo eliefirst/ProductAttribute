@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Elie\ProductAttribute\ViewModel;
+namespace ElielWeb\ProductAttribute\ViewModel;
 
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;

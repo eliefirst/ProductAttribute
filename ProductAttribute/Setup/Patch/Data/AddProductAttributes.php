@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Elie\ProductAttribute\Setup\Patch\Data;
+namespace ElielWeb\ProductAttribute\Setup\Patch\Data;
 
 use Magento\Catalog\Model\Product;
 use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
@@ -76,7 +76,7 @@ class AddProductAttributes implements DataPatchInterface, PatchRevertableInterfa
                 'type' => 'int',
                 'label' => 'Product Elie Status',
                 'input' => 'select',
-                'source' => \Elie\ProductAttribute\Model\Config\Source\StatusOptions::class,
+                'source' => \ElielWeb\ProductAttribute\Model\Config\Source\StatusOptions::class,
                 'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,
@@ -140,7 +140,7 @@ class AddProductAttributes implements DataPatchInterface, PatchRevertableInterfa
                 'label' => 'Gender',
                 'input' => 'multiselect',
                 'backend' => \Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend::class,
-                'source' => \Elie\ProductAttribute\Model\Config\Source\GenderOptions::class,
+                'source' => \ElielWeb\ProductAttribute\Model\Config\Source\GenderOptions::class,
                 'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,
@@ -204,7 +204,7 @@ class AddProductAttributes implements DataPatchInterface, PatchRevertableInterfa
                 'label' => 'Age Group',
                 'input' => 'multiselect',
                 'backend' => \Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend::class,
-                'source' => \Elie\ProductAttribute\Model\Config\Source\AgeGroupOptions::class,
+                'source' => \ElielWeb\ProductAttribute\Model\Config\Source\AgeGroupOptions::class,
                 'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,
