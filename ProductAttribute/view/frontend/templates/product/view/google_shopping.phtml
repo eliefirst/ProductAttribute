@@ -1,0 +1,73 @@
+<?php
+/**
+ * Brand-Gtin-Gender Template (Google Shopping Data)
+ *
+ * @var $block \Magento\Framework\View\Element\Template
+ * @var $viewModel \Elie\ProductAttribute\ViewModel\ProductAttributes
+ */
+
+$viewModel = $block->getData('view_model');
+
+if (!$viewModel->hasGoogleShoppingData()) {
+    return;
+}
+?>
+
+<div class="product-google-shopping" style="margin: 20px 0; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; background-color: #f9f9f9;">
+    <h3 style="margin-top: 0; color: #333; font-size: 18px; border-bottom: 2px solid #1979c3; padding-bottom: 10px;">
+        <?= $block->escapeHtml(__('Brand-Gtin-Gender')) ?>
+    </h3>
+
+    <div class="google-shopping-content" style="margin-top: 15px;">
+        <?php if ($gender = $viewModel->getGender()): ?>
+            <div class="attribute-row" style="margin-bottom: 10px;">
+                <span class="attribute-label" style="font-weight: 600; color: #555; display: inline-block; width: 120px;">
+                    <?= $block->escapeHtml(__('Gender')) ?>:
+                </span>
+                <span class="attribute-value" style="color: #333;">
+                    <?= $block->escapeHtml($gender) ?>
+                </span>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($brand = $viewModel->getBrand()): ?>
+            <div class="attribute-row" style="margin-bottom: 10px;">
+                <span class="attribute-label" style="font-weight: 600; color: #555; display: inline-block; width: 120px;">
+                    <?= $block->escapeHtml(__('Brand')) ?>:
+                </span>
+                <span class="attribute-value" style="color: #333;">
+                    <?= $block->escapeHtml($brand) ?>
+                </span>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($ageGroup = $viewModel->getAgeGroup()): ?>
+            <div class="attribute-row" style="margin-bottom: 10px;">
+                <span class="attribute-label" style="font-weight: 600; color: #555; display: inline-block; width: 120px;">
+                    <?= $block->escapeHtml(__('Age Group')) ?>:
+                </span>
+                <span class="attribute-value" style="color: #333;">
+                    <?= $block->escapeHtml($ageGroup) ?>
+                </span>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($gtin = $viewModel->getGtin()): ?>
+            <div class="attribute-row" style="margin-bottom: 10px;">
+                <span class="attribute-label" style="font-weight: 600; color: #555; display: inline-block; width: 120px;">
+                    <?= $block->escapeHtml(__('Gtin')) ?>:
+                </span>
+                <span class="attribute-value" style="color: #333; font-family: monospace;">
+                    <?= $block->escapeHtml($gtin) ?>
+                </span>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+<?php if ($structuredData = $viewModel->getStructuredData()): ?>
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+        <?= /* @noEscape */ $structuredData ?>
+    </script>
+<?php endif; ?>

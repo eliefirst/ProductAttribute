@@ -6,9 +6,9 @@ namespace Elie\ProductAttribute\Model\Config\Source;
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
 /**
- * Status options for product attribute
+ * Age Group options for Google Shopping
  */
-class StatusOptions extends AbstractSource
+class AgeGroupOptions extends AbstractSource
 {
     /**
      * Get all options
@@ -19,8 +19,11 @@ class StatusOptions extends AbstractSource
     {
         if ($this->_options === null) {
             $this->_options = [
-                ['label' => __('Enable'), 'value' => 1],
-                ['label' => __('Disable'), 'value' => 0]
+                ['label' => __('Newborn'), 'value' => 'newborn'],
+                ['label' => __('Infant'), 'value' => 'infant'],
+                ['label' => __('Toddler'), 'value' => 'toddler'],
+                ['label' => __('Kids'), 'value' => 'kids'],
+                ['label' => __('Adult'), 'value' => 'adult']
             ];
         }
         return $this->_options;
