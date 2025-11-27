@@ -6,9 +6,9 @@ namespace Elie\ProductAttribute\Model\Config\Source;
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
 /**
- * Status options for product attribute
+ * Gender options for Google Shopping
  */
-class StatusOptions extends AbstractSource
+class GenderOptions extends AbstractSource
 {
     /**
      * Get all options
@@ -19,8 +19,9 @@ class StatusOptions extends AbstractSource
     {
         if ($this->_options === null) {
             $this->_options = [
-                ['label' => __('Enable'), 'value' => 1],
-                ['label' => __('Disable'), 'value' => 0]
+                ['label' => __('Male'), 'value' => 'male'],
+                ['label' => __('Female'), 'value' => 'female'],
+                ['label' => __('Unisex'), 'value' => 'unisex']
             ];
         }
         return $this->_options;
