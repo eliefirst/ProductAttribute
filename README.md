@@ -1,9 +1,10 @@
-# Elie_ProductAttribute - Module Magento 2
+# Elielweb_ProductAttribute - Module Magento 2
 
 ## 📋 Description
 
 Module Magento 2 pour afficher des attributs produits personnalisés et des données Google Shopping/SEO sur la page produit.
 
+**Package:** elielweb/module-productattribute
 **Version:** 2.0.0
 **Compatible:** Magento 2.4.8-p3 | PHP 8.1, 8.2, 8.3, 8.4
 
@@ -29,19 +30,81 @@ Module Magento 2 pour afficher des attributs produits personnalisés et des donn
 
 ## 📦 Installation
 
-### 1. Copier le module
-```bash
-cp -r ProductAttribute app/code/Elie/
-```
+### Méthode 1: Via Composer (Recommandée pour Production3)
 
-### 2. Activer le module
+#### Installation depuis le repository Git
+
 ```bash
-php bin/magento module:enable Elie_ProductAttribute
+cd /data/www/magento2-3
+
+# Ajouter le repository
+composer config repositories.elielweb-productattribute git https://github.com/eliefirst/ProductAttribute.git
+
+# Installer le module
+composer require elielweb/module-productattribute:dev-claude/install-productattribute-module-b8DyE
+
+# Activer le module
+php bin/magento module:enable Elielweb_ProductAttribute
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
+php bin/magento cache:clean
 php bin/magento cache:flush
 ```
+
+Le module sera installé automatiquement dans `/data/www/magento2-3/vendor/elielweb/module-productattribute`
+
+### Méthode 2: Installation locale (développement)
+
+```bash
+# Créer le dossier vendor
+mkdir -p /data/www/magento2-3/vendor/elielweb
+
+# Copier le module
+cp -r ProductAttribute/ProductAttribute /data/www/magento2-3/vendor/elielweb/module-productattribute
+
+# Mettre à jour l'autoloader
+cd /data/www/magento2-3
+composer dump-autoload
+
+# Activer le module
+php bin/magento module:enable Elielweb_ProductAttribute
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+php bin/magento cache:clean
+php bin/magento cache:flush
+```
+
+### Vérifier l'installation
+
+```bash
+php bin/magento module:status Elielweb_ProductAttribute
+```
+
+---
+
+## ⚙️ Configuration Back-Office
+
+Après l'installation, accéder à la configuration du module :
+
+**Admin Panel** → **Stores** → **Configuration** → **Elielweb** → **ProductAttribute**
+
+### Sections disponibles
+
+#### 1. General Settings
+- **Enable Module**: Activer/Désactiver le module
+
+#### 2. Custom Attributes Settings
+- **Display Custom Attributes on Frontend**: Afficher les attributs personnalisés sur la page produit
+- **Attribute Label Color**: Couleur CSS pour les labels (ex: #555)
+
+#### 3. Google Shopping Attributes
+- **Enable JSON-LD Structured Data**: Ajouter les données structurées JSON-LD
+- **Display Brand**: Afficher la marque
+- **Display Gender**: Afficher le genre
+- **Display Age Group**: Afficher le groupe d'âge
+- **Display GTIN**: Afficher le code GTIN/EAN/UPC
 
 ---
 
@@ -173,7 +236,7 @@ Les templates incluent du CSS inline. Pour utiliser un fichier CSS externe :
 ```xml
 <page>
     <head>
-        <css src="Elie_ProductAttribute::css/product-attributes.css"/>
+        <css src="Elielweb_ProductAttribute::css/product-attributes.css"/>
     </head>
 </page>
 ```
@@ -191,7 +254,7 @@ php bin/magento eav:attribute:list catalog_product | grep -E "(product_select_at
 ### Vérifier si le module est activé
 
 ```bash
-php bin/magento module:status Elie_ProductAttribute
+php bin/magento module:status Elielweb_ProductAttribute
 ```
 
 ### Logs

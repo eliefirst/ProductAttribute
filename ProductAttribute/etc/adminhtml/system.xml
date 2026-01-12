@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * System Configuration for ProductAttribute Module
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="elielweb" translate="label" sortOrder="200">
+            <label>Elielweb</label>
+        </tab>
+        <section id="productattribute" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>ProductAttribute</label>
+            <tab>elielweb</tab>
+            <resource>Elielweb_ProductAttribute::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable the ProductAttribute module</comment>
+                </field>
+            </group>
+            <group id="custom_attributes" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Attributes Settings</label>
+                <field id="display_frontend" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Custom Attributes on Frontend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show custom product attributes on product detail page</comment>
+                </field>
+                <field id="attribute_label_color" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Attribute Label Color</label>
+                    <comment>CSS color for attribute labels (e.g., #555)</comment>
+                </field>
+            </group>
+            <group id="google_shopping" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Shopping Attributes</label>
+                <field id="enable_structured_data" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable JSON-LD Structured Data</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Add JSON-LD structured data for Google Shopping attributes</comment>
+                </field>
+                <field id="display_brand" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Brand</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show brand attribute on product detail page</comment>
+                </field>
+                <field id="display_gender" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Gender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show gender attribute on product detail page</comment>
+                </field>
+                <field id="display_age_group" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Age Group</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show age group attribute on product detail page</comment>
+                </field>
+                <field id="display_gtin" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display GTIN</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show GTIN/EAN/UPC on product detail page</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

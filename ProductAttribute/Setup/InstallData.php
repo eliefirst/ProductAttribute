@@ -1,5 +1,5 @@
 <?php
-namespace Elie\ProductAttribute\Setup;
+namespace Elielweb\ProductAttribute\Setup;
  
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
@@ -42,7 +42,7 @@ class InstallData implements InstallDataInterface
         $eavSetup->removeAttribute(\Magento\Catalog\Model\Product::ENTITY, 'product_select_attribute');
         $eavSetup->removeAttribute(\Magento\Catalog\Model\Product::ENTITY, 'product_custom_attribute');
  
-        $statusOptions = 'Elie\ProductAttribute\Model\Config\Source\StatusOptions';
+        $statusOptions = 'Elielweb\ProductAttribute\Model\Config\Source\StatusOptions';
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY,
             'product_select_attribute',
