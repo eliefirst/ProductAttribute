@@ -10,20 +10,20 @@
             <!-- Custom Product Attribute Block -->
             <block class="Magento\Framework\View\Element\Template"
                    name="product.info.custom.attribute"
-                   template="Elie_ProductAttribute::product/view/custom_attribute.phtml"
+                   template="Elielweb_ProductAttribute::product/view/custom_attribute.phtml"
                    after="product.info.price">
                 <arguments>
-                    <argument name="view_model" xsi:type="object">Elie\ProductAttribute\ViewModel\ProductAttributes</argument>
+                    <argument name="view_model" xsi:type="object">Elielweb\ProductAttribute\ViewModel\ProductAttributes</argument>
                 </arguments>
             </block>
 
             <!-- Brand-Gtin-Gender Block -->
             <block class="Magento\Framework\View\Element\Template"
                    name="product.info.google.shopping"
-                   template="Elie_ProductAttribute::product/view/google_shopping.phtml"
+                   template="Elielweb_ProductAttribute::product/view/google_shopping.phtml"
                    after="product.info.custom.attribute">
                 <arguments>
-                    <argument name="view_model" xsi:type="object">Elie\ProductAttribute\ViewModel\ProductAttributes</argument>
+                    <argument name="view_model" xsi:type="object">Elielweb\ProductAttribute\ViewModel\ProductAttributes</argument>
                 </arguments>
             </block>
         </referenceContainer>
