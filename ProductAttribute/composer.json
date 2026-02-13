@@ -2,7 +2,7 @@
     "name": "elielweb/module-productattribute",
     "description": "Custom Product Attributes for Google Shopping and SEO - Compatible with Magento 2.4.8-p3 and PHP 8.4",
     "type": "magento2-module",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "license": "proprietary",
     "authors": [
         {
